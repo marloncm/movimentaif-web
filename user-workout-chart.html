@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovimentaIF - Ficha de Treinos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        xintegrity="sha512-ieo5gL4x1I85z6Nn4Qp7E7gYQx3T8n5b9G5p5M5r8b5+Wj1fFvYV5j5N8W5t4/eG5p5M5p4p5t5a5F5+w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/user-workout-chart.css">
+</head>
+
+<body>
+
+    <div class="d-flex h-100">
+        <aside class="col-md-2 bg-custom-white shadow-lg d-flex flex-column flex-shrink-0">
+            <div class="p-4 border-bottom">
+                <h1 class="h4 fw-bold bg-slate-800 logo-title">MovimentaIF</h1>
+            </div>
+            <nav class="nav nav-pills flex-column p-3">
+                <a href="agenda.html" class="nav-link text-custom-slate-800 rounded-pill mt-2"><i
+                        class="fa-solid fa-calendar-alt me-2"></i> Agenda</a>
+                <a href="users.html" class="nav-link active rounded-pill mt-2"><i class="fa-solid fa-users me-2"></i>
+                    Usuários</a>
+                <a href="workouts.html" class="nav-link text-custom-slate-800 rounded-pill mt-2"><i
+                        class="fa-solid fa-dumbbell me-2"></i> Treinos</a>
+            </nav>
+        </aside>
+
+        <div class="col-md-10 d-flex flex-column overflow-hidden">
+            <header class="bg-custom-white shadow-sm p-4 d-flex justify-content-between align-items-center">
+                <h2 class="h5 fw-bold text-custom-slate-700">Ficha de Treinos Semanal</h2>
+                <div class="d-flex align-items-center"><span id="user-email" class="text-custom-slate-600 me-3"></span>
+                    <button id="logout-btn" class="btn btn-secondary btn-sm rounded-pill">Sair</button>
+                </div>
+            </header>
+
+            <main class="flex-grow-1 overflow-auto p-4">
+                <div class="container-fluid">
+                    <a id="back-btn" href="#" class="btn btn-sm btn-outline-secondary rounded-pill mb-3">
+                        <i class="fa-solid fa-arrow-left me-1"></i> Voltar para Detalhes
+                    </a>
+
+                    <h4 class="fw-bold text-custom-slate-800 mb-4">Ficha de Treino de <span id="user-name-title"
+                            class="text-primary">Carregando...</span></h4>
+
+                    <div id="loading-spinner" class="text-center p-5">
+                        <div class="spinner-border text-primary" role="status"><span
+                                class="visually-hidden">Carregando...</span></div>
+                    </div>
+
+                    <div id="chart-content" class="d-none">
+                        <!-- Conteúdo dinâmico (Visualização ou Edição) -->
+                    </div>
+
+                    <div id="error-alert" class="alert alert-danger d-none mt-3"></div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal para Adicionar Detalhes e Salvar UserWorkout -->
+    <div class="modal fade" id="addWorkoutModal" tabindex="-1" aria-labelledby="addWorkoutModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addWorkoutModalLabel">Adicionar Treino ao Dia</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Formulário de Detalhes do UserWorkout (Etapa Única) -->
+                <div class="modal-body">
+                    <form id="user-workout-form">
+
+                        <div class="mb-3">
+                            <label for="workout-select" class="form-label">Selecione o Treino</label>
+                            <!-- CRÍTICO: Este é o <select> que o JS estava procurando -->
+                            <select class="form-select" id="workout-select" required>
+                                <option value="">Carregando treinos...</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="workout-weight" class="form-label">Peso (kg)</label>
+                            <input type="number" class="form-control" id="workout-weight" required min="0" step="0.1"
+                                value="0">
+                        </div>
+                        <div class="mb-3">
+                            <label for="workout-reps" class="form-label">Repetições</label>
+                            <input type="number" class="form-control" id="workout-reps" required min="1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="workout-series" class="form-label">Séries</label>
+                            <input type="number" class="form-control" id="workout-series" required min="1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="workout-obs" class="form-label">Informações Adicionais (Obs)</label>
+                            <textarea class="form-control" id="workout-obs" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="save-user-workout-btn">Adicionar Treino</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script type="module" src="assets/js/user-workout-chart.js"></script>
+    <!-- <script type="module" src="assets/js/firebaseConfig.js"></script> -->
+</body>
+
+</html>

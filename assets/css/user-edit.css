@@ -1,0 +1,26 @@
+        :root {
+            --bs-slate-700: #334155;
+            --bs-slate-800: #1e293b;
+            --color-light-bg: #f4f6f8;
+            --bs-primary: #4078c0;
+            --bs-secondary: #adb5bd;
+        }
+
+        body {
+            background-color: var(--color-light-bg);
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+        .bg-custom-white {
+            background-color: white !important;
+        }
+
+        .nav-link.active {
+            background-color: var(--bs-primary) !important;
+            color: white !important;
+            font-weight: 600;
+        }
+
+        .form-check-label {
+            font-weight: 500;
+        }

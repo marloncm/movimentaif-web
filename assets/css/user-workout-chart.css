@@ -1,0 +1,52 @@
+        :root {
+            --bs-slate-700: #334155;
+            --bs-slate-800: #1e293b;
+            --color-light-bg: #f4f6f8;
+            --bs-primary: #4078c0;
+            --bs-secondary: #adb5bd;
+            --bs-success: #198754;
+            --bs-danger: #dc3545;
+            --bs-warning: #ffc107;
+        }
+
+        body {
+            background-color: var(--color-light-bg);
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+        .bg-custom-white {
+            background-color: white !important;
+        }
+
+        .nav-link.active {
+            background-color: var(--bs-primary) !important;
+            color: white !important;
+            font-weight: 600;
+        }
+
+        .day-card {
+            border-left: 5px solid var(--bs-primary);
+        }
+
+        .list-group-flush .list-group-item {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        /* Estilo para itens clicáveis no modal */
+        .workout-modal-item {
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .workout-modal-item:hover {
+            background-color: var(--bs-light);
+        }
+
+        .text-custom-slate-700 {
+            color: var(--bs-slate-700);
+        }
+
+        .text-custom-slate-800 {
+            color: var(--bs-slate-800);
+        }

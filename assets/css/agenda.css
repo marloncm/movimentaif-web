@@ -1,0 +1,120 @@
+ :root {
+     /* Cores Neutras (Base) */
+     --bs-slate-700: #334155;
+     --bs-slate-800: #1e293b;
+     --color-light-bg: #f4f6f8;
+
+     /* NOVO PRIMÁRIO: Azul Profissional (Ação/Acessibilidade) */
+     --bs-primary: #4078c0;
+     --bs-btn-primary-bg: #4078c0;
+
+     /* SECUNDÁRIO: Cinza Neutro (Botões secundários) */
+     --bs-secondary: #adb5bd;
+
+     /* Cores de status */
+     --bs-success: #198754;
+
+     --bs-movif-orange: #ff5722;
+     --bs-movif-raspberry: rgb(220, 50, 112);
+ }
+
+ body {
+     background-color: var(--color-light-bg);
+     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+ }
+
+ .text-custom-slate-600 {
+     color: var(--bs-slate-600);
+ }
+
+ .text-custom-slate-700 {
+     color: var(--bs-slate-700);
+ }
+
+ .text-custom-slate-800 {
+     color: var(--bs-slate-800);
+ }
+
+ /* O Sidebar, Header e o Card principal devem ser brancos para contraste */
+ .bg-custom-white {
+     background-color: white !important;
+ }
+
+ /* O nav-link ativo usa a cor primária (Azul Neutro) */
+ .nav-link.active {
+     background-color: var(--bs-primary) !important;
+     color: white !important;
+     font-weight: 600;
+ }
+
+ /* Estilos do Calendário */
+ .calendar-grid {
+     display: grid;
+     grid-template-columns: repeat(7, 1fr);
+     gap: 5px;
+ }
+
+ .day-header {
+     font-weight: bold;
+     text-align: center;
+     padding: 8px 0;
+     color: var(--bs-slate-700);
+ }
+
+ .day-cell {
+     padding: 10px;
+     border-radius: 8px;
+     text-align: center;
+     min-height: 80px;
+     cursor: pointer;
+     transition: background-color 0.2s, box-shadow 0.2s, color 0.2s;
+     color: var(--bs-slate-700);
+ }
+
+ .day-cell:hover:not(.empty-day) {
+     background-color: #f0f0f0;
+     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+ }
+
+ .current-day {
+     border: 2px solid var(--bs-secondary) !important;
+ }
+
+ .selected-day {
+     background-color: var(--bs-primary) !important;
+     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+     color: white !important;
+ }
+
+ .selected-day .day-number,
+ .selected-day .schedule-dot {
+     color: white !important;
+ }
+
+ .schedule-list-workouts {
+     list-style: none;
+     padding-left: 0;
+     margin-bottom: 0;
+ }
+
+ .schedule-card {
+     border-left: 5px solid var(--bs-primary);
+ }
+
+ /* NOVO ESTILO: Item de treino clicável com hover */
+ .workout-link-item {
+     cursor: pointer;
+     transition: background-color 0.1s;
+     text-decoration: none;
+     /* Remove sublinhado padrão */
+     color: var(--bs-slate-700);
+     /* Cor do texto padrão */
+     display: block;
+     /* Ocupa a largura total */
+ }
+
+ .workout-link-item:hover {
+     background-color: #f0f0f0;
+     /* Fundo cinza claro ao passar o mouse */
+     color: var(--bs-movif-raspberry);
+ }

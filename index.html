@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovimentaIF - Acesso do Professor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        xintegrity="sha512-ieo5gL4x1I85z6Nn4Qp7E7gYQx3T8n5b9G5p5M5r8b5+Wj1fFvYV5j5N8W5t4/eG5p5M5r5p5a5F5+w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+<body class="bg-custom-slate-100">
+    <div class="d-flex align-items-center justify-content-center vh-100">
+        <div class="card shadow-lg border-0 rounded-4" style="max-width: 900px;">
+            <div class="row g-0">
+                <!-- Imagem e Texto (Left Side) -->
+                <div
+                    class="col-md-6 d-none d-md-flex align-items-center justify-content-center p-5 bg-light rounded-start-4">
+                    <div class="text-center">
+                        <!-- Substitua 'assets/images/mais-movimento-logo-completo.png' pela URL ou caminho real da sua imagem -->
+                        <img src="assets/images/mais-movimento-logo-completo.png" alt="Logo MovimentaIF"
+                            class="img-fluid rounded mb-4">
+                        <h2 class="h5 fw-bold  logo-title">MovimentaIF</h2>
+                        <p class=" small mt-2">O MovimentaIF é o sistema de gestão digital desenvolvido para
+                            modernizar e otimizar a administração da academia do IFRS Campus Porto Alegre. Esta
+                            aplicação é a sua central de comando destinada <b>exclusivamente à equipe da academia</b>,
+                            permitindo o gerenciamento completo de alunos, treinos e agendamentos.</p>
+                    </div>
+                </div>
+
+                <!-- Formulário de Login (Right Side) -->
+                <div class="col-md-6 p-4 rounded-end-4">
+                    <div class="p-lg-4">
+                        <div class="text-center mb-4">
+                            <h1 class="h4 fw-bold text-custom-slate-800">Acesso do Professor</h1>
+                            <p class="text-muted">Faça login para continuar</p>
+                        </div>
+                        <div id="auth-message" class="alert d-none"></div>
+
+                        <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-login-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login"
+                                    aria-selected="true">Login</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-register-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-register" type="button" role="tab"
+                                    aria-controls="pills-register" aria-selected="false">Cadastro</button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="pills-tabContent">
+                            <!-- Login Form -->
+                            <div class="tab-pane fade show active" id="pills-login" role="tabpanel"
+                                aria-labelledby="pills-login-tab">
+                                <form id="login-form">
+                                    <div class="mb-3">
+                                        <label for="login-email" class="form-label small text-muted">E-mail</label>
+                                        <input type="email" class="form-control" id="login-email" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="login-password" class="form-label small text-muted">Senha</label>
+                                        <input type="password" class="form-control" id="login-password" required>
+                                    </div>
+                                    <button type="submit"
+                                        class="btn btn-primary w-100 fw-bold rounded-pill">Entrar</button>
+                                </form>
+                                <div class="text-center my-3">
+                                    <span class="text-muted small">ou</span>
+                                </div>
+                                <button id="google-login-btn"
+                                    class="btn btn-outline-secondary w-100 rounded-pill d-flex align-items-center justify-content-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        class="me-2">
+                                        <path fill="#4285F4"
+                                            d="M22.56 12.25c0-.78-.07-1.5-.2-2.22H12.25v4.45h6.24a5.353 5.353 0 0 1-2.26 3.51v2.9h3.76c2.2-2.02 3.48-5.02 3.48-8.64z" />
+                                        <path fill="#34A853"
+                                            d="M12.25 23.5c3.08 0 5.67-1.02 7.56-2.91l-3.76-2.9c-1.04.66-2.36 1.05-3.8 1.05a6.45 6.45 0 0 1-6.1-4.49H2.39v2.96A11.77 11.77 0 0 0 12.25 23.5z" />
+                                        <path fill="#FBBC04"
+                                            d="M5.15 14.15a6.47 6.47 0 0 1 0-4.3v-2.96H2.39a11.77 11.77 0 0 0 0 10.22l2.76-2.96z" />
+                                        <path fill="#EA4335"
+                                            d="M12.25 4.5c1.68 0 3.19.57 4.38 1.63l3.35-3.26C17.92 1.5 15.28 0 12.25 0A11.77 11.77 0 0 0 2.39 6.28l2.76 2.96c1.04-3.1 3.8-5.44 6.9-5.44z" />
+                                    </svg>
+                                    Entrar com o Google
+                                </button>
+                            </div>
+
+                            <!-- Register Form -->
+                            <div class="tab-pane fade" id="pills-register" role="tabpanel"
+                                aria-labelledby="pills-register-tab">
+                                <form id="register-form">
+                                    <div class="mb-3">
+                                        <label for="register-name" class="form-label small text-muted">Nome
+                                            Completo</label>
+                                        <input type="text" class="form-control" id="register-name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="register-email" class="form-label small text-muted">E-mail</label>
+                                        <input type="email" class="form-control" id="register-email" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="register-password" class="form-label small text-muted">Senha</label>
+                                        <input type="password" class="form-control" id="register-password" required>
+                                    </div>
+                                    <button type="submit"
+                                        class="btn btn-success w-100 fw-bold rounded-pill">Cadastrar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script type="module" src="assets/js/index.js"></script>
+</body>
+
+</html>

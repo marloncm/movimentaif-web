@@ -1,0 +1,78 @@
+  :root {
+      /* Cores Neutras (Base) */
+      --bs-slate-700: #334155;
+      --bs-slate-800: #1e293b;
+
+      /* Cor de Fundo Neutra e Profissional (Aumenta o Contraste) */
+      --color-light-bg: #f4f6f8;
+
+      /* Cores da Marca (APENAS para identidade visual/logo) */
+      --color-brand-orange: rgb(243, 153, 29);
+      --color-brand-cherry: rgb(220, 50, 112);
+
+      /* NOVO PRIMÁRIO: Azul Profissional (Ação/Acessibilidade) */
+      --bs-primary: #4078c0;
+      --bs-btn-primary-bg: #4078c0;
+      --bs-btn-primary-border-color: #4078c0;
+      --bs-btn-primary-hover-bg: #30609e;
+      --bs-btn-primary-hover-border-color: #30609e;
+
+      /* SECUNDÁRIO: Cinza Neutro (Botões secundários) */
+      --bs-secondary: #adb5bd;
+      --bs-btn-secondary-bg: #adb5bd;
+      --bs-btn-secondary-border-color: #adb5bd;
+
+      /* Botão de Sucesso/Ativo (Mantido Verde para Status Positivo/Ação Construtiva) */
+      --bs-success: #198754;
+
+      /* Botão de Perigo (Mantido Vermelho para Ação Destrutiva) */
+      --bs-danger: #dc3545;
+  }
+
+  /* APLICAÇÃO DA COR DE FUNDO NEUTRA EM TODO O BODY */
+  body {
+      background-color: var(--color-light-bg);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+
+  .text-custom-slate-600 {
+      color: var(--bs-slate-600);
+  }
+
+  .text-custom-slate-700 {
+      color: var(--bs-slate-700);
+  }
+
+  .text-custom-slate-800 {
+      color: var(--bs-slate-800);
+  }
+
+  /* O Sidebar, Header e o Card principal devem ser brancos para contraste */
+  .bg-custom-white {
+      background-color: white !important;
+  }
+
+  /* O nav-link ativo usa a cor primária (Azul Neutro) */
+  .nav-link.active {
+      background-color: var(--bs-primary) !important;
+      color: white !important;
+      font-weight: 600;
+  }
+
+  /* Os botões de outline primário (Detathes) herdam o novo Azul */
+  .btn-outline-primary {
+      --bs-btn-color: var(--bs-primary);
+      --bs-btn-border-color: var(--bs-primary);
+      --bs-btn-hover-bg: var(--bs-primary);
+      --bs-btn-hover-border-color: var(--bs-primary);
+      --bs-btn-active-bg: var(--bs-primary);
+      --bs-btn-active-border-color: var(--bs-primary);
+  }
+
+  /* Botão Adicionar Treino (Manter Verde para Status Positivo/Ação Construtiva) */
+  .btn-success {
+      --bs-btn-bg: var(--bs-success);
+      --bs-btn-border-color: var(--bs-success);
+      --bs-btn-hover-bg: #157347;
+      --bs-btn-hover-border-color: #157347;
+  }

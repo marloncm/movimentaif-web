@@ -1,0 +1,40 @@
+ :root {
+     /* Cores Neutras (Bootstrap/Slate) */
+     --bs-slate-700: #334155;
+     --bs-slate-800: #1e293b;
+     --color-light-bg: #f4f6f8;
+
+     /* Cores da Marca (CMYK/RGB fornecidos) */
+     --color-primary-orange: rgb(243, 153, 29);
+     /* Laranja */
+     --color-secondary-cherry: rgb(220, 50, 112);
+     /* Cereja */
+
+     /* DEFINIÇÃO DO NOVO PRIMÁRIO DO BOOTSTRAP: Laranja (Para links e botões de ação) */
+     --bs-primary: var(--color-primary-orange);
+     --bs-btn-primary-bg: var(--color-primary-orange);
+     --bs-btn-primary-border-color: var(--color-primary-orange);
+     --bs-btn-primary-hover-bg: #E08518;
+     --bs-btn-primary-hover-border-color: #E08518;
+
+     /* DEFINIÇÃO DO SECUNDÁRIO DO BOOTSTRAP: Cinza escuro (Para botões neutros) */
+     --bs-secondary: #6c757d;
+     --bs-btn-secondary-bg: #6c757d;
+     --bs-btn-secondary-border-color: #6c757d;
+
+     /* Botão de Cadastro (Success) com a cor Cereja */
+     --bs-success: var(--color-secondary-cherry);
+     --bs-btn-success-bg: var(--color-secondary-cherry);
+     --bs-btn-success-border-color: var(--color-secondary-cherry);
+     --bs-btn-success-hover-bg: #C6316D;
+     --bs-btn-success-hover-border-color: #C6316D;
+ }
+
+ body {
+     background-color: var(--color-light-bg);
+     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+ }
+
+ .text-custom-emerald-600 {
+     color: var(--bs-emerald-600);
+ }

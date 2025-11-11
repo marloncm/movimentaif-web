@@ -1,0 +1,33 @@
+  @font-face {
+      font-family: 'Lumios Brush';
+      src: url('/assets/fonts/lumiosbrush_regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+  :root {
+      /* Cores Neutras (Base) */
+      --bs-slate-700: #334155;
+      --bs-slate-800: #1e293b;
+      --color-light-bg: #f4f6f8;
+
+      /* NOVO PRIMÁRIO: Azul Profissional (Ação/Acessibilidade) */
+      --bs-primary: #4078c0;
+      --bs-btn-primary-bg: #4078c0;
+
+      /* SECUNDÁRIO: Cinza Neutro (Botões secundários) */
+      --bs-secondary: #adb5bd;
+
+      /* Cores de status */
+      --bs-success: #198754;
+
+      --bs-movif-orange: #ff5722;
+      --bs-movif-raspberry: rgb(220, 50, 112);
+
+      --font-title: 'Lumios Brush';
+  }
+
+  .logo-title {
+      font-family: var(--font-title) !important;
+      font-size: 2.0rem !important;
+  }
